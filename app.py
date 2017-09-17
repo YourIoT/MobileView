@@ -55,8 +55,6 @@ def get_full_inventory(username, password, url):
         raw_json = RMGet(username, password, raw_inventory['next_uri'])
         raw_inventory = json.loads(raw_json)
         inventory_list = inventory_list + (raw_inventory['list'])
-        print (len(inventory_list))
-    print ("while loop finished")
     streams_df = DataFrame(inventory_list)
     return streams_df
 
