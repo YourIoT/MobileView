@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+	<br>
+<h3>{{title}}</h3>
+<form action="/devices" method="POST">
+  	<select name="Desc_DeviceID">
+	{% for x in devices_list %}
+	<option value="{{ x }}"{% if loop.first %} SELECTED{% endif %}>{{ x[:-38] }}</option>
+	{% endfor %}
+	</select>
+	<br>
+	<br>
+	<p>Datastream filter: (use ", " to seperate values)</p>
+	<input type="text" placeholder="Stream filter" name="stream_filter" value="{{stream_filters}}">
+	<br>
+	<br>
+	<br>
+	<input class="btn btn-default" type="submit" value="Retrieve DataStreams">
+
+</form>
+
+{% endblock %}
