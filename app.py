@@ -8,10 +8,9 @@ import json
 import http.client
 import base64
 import plotly
-import os
 
 app = Flask(__name__)
-app.secret_key = os.urandom(256)
+app.secret_key = "331d28338f9d355d6b4a5b0062d1ed2fdfc50b4d9712985da4ec3c401d9a3651"
 
 graphable_list = ['FLOAT', 'INTEGER', 'LONG', 'DOUBLE']
 stream_filters = "cval, bat, tmp, temperature, temp1/val"
